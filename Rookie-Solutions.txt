@@ -1,0 +1,47 @@
+def findTheBug(grid):
+    row=0
+    col=0
+    for x in range(len(grid)):
+        for y in range(len(grid)):
+            if grid[x][y]=='X':
+                return [x,y]
+                row=x
+                col=y
+    return [5,5]
+
+---------------------------------------------------
+def timeCompare(t1, t2):
+    h1=int(t1[0:2])
+    h2=int(t2[0:2])
+    m1=int(t1[3:5])
+    m2=int(t2[3:5])
+    z1=t1[-2:]
+    z2=t2[-2:]
+    if h1==12:
+        h1=0
+    if h2==12:
+        h2=0
+    if z1=="AM":
+        zone1=0
+    else:
+        zone1=1
+    if z2=="AM":
+        zone2=0
+    else:
+        zone2=1
+    if zone1>zone2:
+        return "Second"
+    elif zone2>zone1:
+        return "First"
+    else:
+        if h1>h2:
+            return "Second"
+        elif h2>h1:
+            return "First"
+        else:
+            if m1>m2:
+                return "Second"
+            else:
+                return "First"
+
+-------------------------------------------------------------
